@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Taman Teras Cafe
 
 Website self-ordering sesuai proposal tugas akhir, wawancara owner, dan draft rancangan. Frontend menggunakan **Vue.js 3**, backend **Node.js + Express**, dan integrasi database **Supabase PostgreSQL + Supabase Auth**. Bahasa antarmuka Indonesia.
