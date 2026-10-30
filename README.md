@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Taman Teras Cafe
 
 Website self-ordering sesuai proposal tugas akhir, wawancara owner, dan draft rancangan. Frontend menggunakan **Vue.js 3**, backend **Node.js + Express**, dan integrasi database **Supabase PostgreSQL + Supabase Auth**. Bahasa antarmuka Indonesia.
@@ -105,3 +106,6 @@ docs/API.md              Daftar endpoint dan hak akses
 Total pesanan dihitung ulang dari harga database. Salinan nama/harga/catatan disimpan pada pesanan, sehingga perubahan atau penghapusan menu tidak mengubah riwayat. Penyimpanan checkout mendukung kunci idempotensi. Perubahan status memakai versi untuk mencegah perubahan staf saling menimpa; stok dan riwayat diperbarui dalam satu transaksi. Semua perubahan menu/bahan memakai penghapusan logis.
 
 Rujukan teknis implementasi: [Vue](https://vuejs.org/guide/quick-start.html), [Express](https://expressjs.com/en/guide/routing/), [Supabase Auth](https://supabase.com/docs/reference/javascript/auth-getuser), dan [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security).
+=======
+# Metopen_Indra
+>>>>>>> origin/main
