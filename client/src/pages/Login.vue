@@ -1,0 +1,10 @@
+<script setup>
+import {onMounted,reactive,ref} from 'vue';
+import {useRouter} from 'vue-router';
+import Icon from '../components/Icon.vue';
+import {api,state,loadConfig} from '../lib';
+const router=useRouter(),form=reactive({email:'',password:''}),error=ref(''),busy=ref(false);
+onMounted(()=>loadConfig().catch(()=>{}));
+async function login(){busy.value=true;error.value='';try{state.user=await api('/auth/login',{method:'POST',body:form});router.push('/admin/orders');}catch(e){error.value=e.message;}finally{busy.value=false;}}
+</script>
+<template><div class="login-page"><div class="login-brand-panel"><RouterLink class="brand light" to="/"><span class="brand-mark"><Icon name="Leaf" :size="28"/></span><span>Taman Teras<small>CAFE & GOOD COMPANY</small></span></RouterLink><div><Icon name="Coffee" :size="56"/><h1>Di balik setiap<br/>jeda yang enak.</h1><p>Ruang kerja tim Taman Teras.<br/>Kelola pesanan, menu, dan persediaan.</p></div><span>Tempat singgah, rasa yang akrab.</span></div><main class="login-form-panel"><RouterLink class="back-link" to="/"><Icon name="ArrowLeft" :size="16"/>Kembali ke website</RouterLink><form @submit.prevent="login"><span class="large-icon"><Icon name="LockKeyhole" :size="27"/></span><h2>Selamat bekerja.</h2><p>Masuk menggunakan akun owner atau kasir.</p><label>Email staf<input v-model="form.email" type="email" required autocomplete="username" placeholder="nama@cafe.com"/></label><label>Kata sandi<input v-model="form.password" type="password" required autocomplete="current-password" placeholder="Masukkan kata sandi"/></label><div v-if="error" class="alert error" role="alert">{{error}}</div><button class="button primary full" :disabled="busy">{{busy?'Memeriksa…':'Masuk dashboard'}}<Icon name="ArrowRight" :size="18"/></button><div v-if="state.config?.mode==='demo'" class="demo-accounts"><strong>Akun untuk mencoba demo</strong><p>Owner: owner@tamanteras.local<br/>Kasir: kasir@tamanteras.local</p><small>Kata sandi tersedia di README proyek.</small></div></form></main></div></template>

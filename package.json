@@ -1,0 +1,34 @@
+{
+  "name": "taman-teras-cafe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c green,cyan \"node --watch server/index.js\" \"vite --host 0.0.0.0\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "@lucide/vue": "1.65.0",
+    "@supabase/supabase-js": "2.118.0",
+    "cookie-parser": "1.4.7",
+    "dotenv": "18.0.9",
+    "express": "5.3.0",
+    "express-rate-limit": "8.7.2",
+    "helmet": "8.3.0",
+    "qrcode": "1.5.4",
+    "vue": "3.5.44",
+    "vue-router": "4.6.4",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.10",
+    "concurrently": "10.0.6",
+    "vite": "8.3.5"
+  }
+}

@@ -1,0 +1,1 @@
+<template><div class="container inner-page empty-state"><h1>Halaman tidak ditemukan</h1><p>Alamat yang kamu buka belum tersedia.</p><RouterLink class="button primary" to="/">Kembali ke menu</RouterLink></div></template>
